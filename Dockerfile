@@ -1,8 +1,7 @@
+# Pull base image 
 FROM tomcat:8.0.20-jre8
-
-RUN mkdir /usr/local/tomcat/webapps/myapp
-
-ADD target/CounterWebApp.war /usr/local/tomcat/webapps/myapp/
-
-EXPOSE 8081
+VOLUME /tmp
+COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+ADD target/CounterWebApp.war /usr/local/tomcat/webapps/
+EXPOSE 8080
 
