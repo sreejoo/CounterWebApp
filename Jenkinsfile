@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        TOMCAT_APPHOME = '/opt/tomcat'
+        TOMCAT_APPHOME = '/opt/tomcat/webapps'
 
     }
 
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                sh 'cp $PWD/target/*.jar $TOMCAT_APPHOME/webapps/'
+                sh 'cp $PWD/target/*.war $TOMCAT_APPHOME/'
             }
         }
     }
