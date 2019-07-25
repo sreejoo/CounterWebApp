@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        WORKSPACE = 'PWD'
+        TOMCAT_APPHOME = '/opt/tomcat'
+
     }
 
     stages {
@@ -15,7 +16,7 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                echo '$WORKSPACE'
+                sh 'cp $PWD/target/*.jar $TOMCAT_APPHOME/webapps/'
             }
         }
     }
