@@ -15,7 +15,7 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                sh echo $WORKSPACE
+                echo '$WORKSPACE'
             }
         }
     }
