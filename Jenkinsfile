@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        WORKSPACE = $PWD
+        WORKSPACE = 'PWD'
     }
 
     stages {
@@ -15,7 +15,7 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                sh echo '$WORKSPACE'
+                sh echo $WORKSPACE
             }
         }
     }
