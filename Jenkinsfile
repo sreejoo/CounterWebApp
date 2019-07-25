@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        WORKSPACE = 'pwd()'
+        WORKSPACE = $PWD
     }
 
     stages {
@@ -15,7 +15,7 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                sh 'printenv'
+                sh echo '$WORKSPACE'
             }
         }
     }
