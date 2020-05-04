@@ -20,7 +20,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --tag helloworld:latest .
+      - docker build --tag helloworld .
       - docker images
       - docker tag helloworld:latest helloworld:$IMAGE_TAG
   post_build:
